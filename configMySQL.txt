@@ -1,0 +1,10 @@
+MYSQL configuration:
+
+Protocol:		TCP/IP
+Config:			Dev.Comp.
+Port:			3306
+X Protocol Port:	33060
+Memory name:		MYSQL_Mem
+Pipe name:		MYSQL_Pipe
+Pass:			@1MySQL&
+Win service name:	MySQL80
