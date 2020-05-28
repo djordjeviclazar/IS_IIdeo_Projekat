@@ -1,9 +1,35 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:ui="http://java.sun.com/jsf/facelets"
-      xmlns:f="http://java.sun.com/jsf/core"
-      xmlns:h="http://java.sun.com/jsf/html">
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      	xmlns:f="http://xmlns.jcp.org/jsf/core"
+		xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+		xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
+      	xmlns:h="http://xmlns.jcp.org/jsf/html"
+     	xmlns:p="http://primefaces.org/ui">
 
-	<ui:composition template="">
-	</ui:composition>
+		<h:head>
+			<title>Profile PREMIUM</title>
+		</h:head>
+		
+		<h:body>
+			<h3>WELCOME</h3>
+			<br></br><br></br><br></br>
+			<h:commandLink action="#{korisnikController.logout}" value="Logout"></h:commandLink>
+			
+			<br></br><br></br><br></br>
+			
+			<h:inputText id="username" value="#{korisnikController.search}"></h:inputText>
+			<p:linkButton outcome="SearchApp.xhtml" value="Search" style="margin-right:20px;">
+    			<f:param name="searchCriteria" value ="#{korisnikController.search}" />
+			</p:linkButton>
+			
+			<p><h:inputFile id="file" value="#{aplikacijaController.uploadedFile}">
+     			</h:inputFile>
+      		</p>
+      		
+      		<br></br>
+      		
+      		<h:commandButton action="#{aplikacijaController.upload()}" value="Upload" >
+      		</h:commandButton>
+		
+		</h:body>
 </html>

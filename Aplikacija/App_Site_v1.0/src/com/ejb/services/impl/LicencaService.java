@@ -42,4 +42,13 @@ public class LicencaService implements ILicencaService
 		Licenca licenca = entityManager.createQuery("SELECT l FROM Licenca l WHERE l.premiumUser = '" + idKorisnika + "'", Licenca.class).getSingleResult();
 		return licenca.getDatum().compareTo(new Date()) > 0;
 	}
+
+	@Override
+	public int getLicenca(int idKorisnika) 
+	{
+		Licenca licenca = entityManager.createQuery("SELECT l FROM Licenca l WHERE l.premiumUser = '" + idKorisnika + "'", Licenca.class).getSingleResult();
+		return licenca.getId();
+	}
+	
+	
 }

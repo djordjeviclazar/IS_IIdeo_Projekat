@@ -5,4 +5,5 @@ public interface IPremiumUserService
 	public void addPremiumUser(int id);
 	public int getSpecificId(int id);
 	public boolean isPremiumUser(int id);
+	public int getId(int specificId);
 }

@@ -14,10 +14,10 @@
 		
 			<h3>Register</h3>
 		
-			<h:inputText a:placeholder="Ime" value="#{korisnikController.regUser.punoIme}"></h:inputText>
-			<h:inputText a:placeholder="Username" value="#{korisnikController.regUser.username}"></h:inputText>
-			<h:inputSecret a:placeholder="Password" value="#{korisnikController.regUser.punoIme}"></h:inputText>
-			<h:inputText a:placeholder="Email" value="#{korisnikController.regUser.email}"></h:inputText>
+			<h:inputText a:placeholder="Ime" value="#{korisnikController.punoIme}"></h:inputText>
+			<h:inputText a:placeholder="Username" value="#{korisnikController.username}"></h:inputText>
+			<h:inputSecret a:placeholder="Password" value="#{korisnikController.password}"></h:inputText>
+			<h:inputText a:placeholder="Email" value="#{korisnikController.email}"></h:inputText>
 			
 			<h:commandButton value="Create account" action="#korisnikController.register()}">
 			</h:commandButton>

@@ -31,7 +31,7 @@ public class KorisnikService implements IKorisnikService
 	@Override
 	public Korisnik validate(String username, String password) 
 	{
-		Korisnik user = entityManager.createQuery("SELECT l FROM Korisnik l WHERE l.username = '" + username + "'", Korisnik.class).getSingleResult();
+		Korisnik user = entityManager.createQuery("SELECT l FROM Korisnik l WHERE l.username LIKE '" + username + "'", Korisnik.class).getSingleResult();
 		
 		if (user != null && user.getPassword().equals(password))
 		{

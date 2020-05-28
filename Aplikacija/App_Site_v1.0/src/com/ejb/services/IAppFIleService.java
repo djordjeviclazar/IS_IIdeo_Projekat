@@ -6,4 +6,5 @@ public interface IAppFIleService
 {
 	public AppFile getFile(int id);
 	public void Upload(AppFile newFile);
+	public int freePlace();
 }

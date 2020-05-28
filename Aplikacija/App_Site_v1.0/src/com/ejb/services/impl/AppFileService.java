@@ -28,4 +28,11 @@ public class AppFileService implements IAppFIleService
 		entityManager.getTransaction().commit();
 	}
 
+	@Override
+	public int freePlace() 
+	{
+		AppFile file = entityManager.createQuery("SELECT f FROM AppFile f ORDER BY f.id DESC", AppFile.class).getSingleResult();
+		return file.getId() + 1;
+	}
+
 }

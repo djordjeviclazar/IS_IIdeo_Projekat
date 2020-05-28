@@ -21,6 +21,11 @@ public class AplikacijaService implements IAplikacijaService
 		entityManager.getTransaction().begin();
 		entityManager.persist(aplikacija);
 		entityManager.getTransaction().commit();
+		
+		entityManager.getTransaction().begin();
+		Aplikacija stara = entityManager.createQuery("SELECT a FROM Aplikacija a WHERE a.imeFajla LIKE '" + aplikacija.getImeFajla() + "' AND a.poslednjaVerzija = '" + 1 + "'", Aplikacija.class).getSingleResult();
+		stara.setVerija(0);
+		entityManager.getTransaction().commit();
 	}
 
 	@Override
@@ -33,7 +38,7 @@ public class AplikacijaService implements IAplikacijaService
 	@Override
 	public List<Aplikacija> getVersions(String ime) 
 	{
-		List<Aplikacija> aplikacija= entityManager.createQuery("SELECT a FROM Aplikacija a WHERE a.imeFajla = '" + ime + "' ORDER BY a.verzija DESC", Aplikacija.class).getResultList();
+		List<Aplikacija> aplikacija= entityManager.createQuery("SELECT a FROM Aplikacija a WHERE a.imeFajla LIKE '" + ime + "' ORDER BY a.verzija DESC", Aplikacija.class).getResultList();
 		return aplikacija;
 	}
 

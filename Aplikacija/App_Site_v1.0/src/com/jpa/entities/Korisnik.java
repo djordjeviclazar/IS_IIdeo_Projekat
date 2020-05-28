@@ -29,6 +29,11 @@ public class Korisnik
 	@Column(name = "Email")
 	private String email;
 	
+	public int getId()
+	{
+		return this.id;
+	}
+	
 	public String getUsername()
 	{
 		return this.username;
@@ -60,7 +65,7 @@ public class Korisnik
 		return this.punoIme;
 	}
 	
-	public void setImeFajla(String novoIme)
+	public void setPunoIme(String novoIme)
 	{
 		if (novoIme != null)
 		{

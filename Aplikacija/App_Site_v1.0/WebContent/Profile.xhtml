@@ -13,8 +13,14 @@
 		<h:body>
 			<h3>WELCOME</h3>
 			<br></br><br></br><br></br>
-			<h:commandLink action="#{login.logout}" value="Logout"></h:commandLink>
-			<a href="SearchApp.xhtml">Search</a>
+			<h:commandLink action="#{korisnikController.logout}" value="Logout"></h:commandLink>
+			
+			<br></br><br></br><br></br>
+			
+			<h:inputText id="username" value="#{korisnikController.search}"></h:inputText>
+			<p:linkButton outcome="SearchApp.xhtml" value="Search" style="margin-right:20px;">
+    			<f:param name="searchCriteria" value ="#{korisnikController.search}" />
+			</p:linkButton>
 		
 		</h:body>
 </html>
